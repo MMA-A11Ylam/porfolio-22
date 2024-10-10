@@ -1,0 +1,377 @@
+/* about section css ------------------------------------------*/
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2em;
+    background: var(--secon-bg-color);
+}
+
+.about img {
+    text-align: center;
+    position: relative;
+}
+
+.about .img-about img {
+    max-width: 400px;
+    height: auto;
+}
+
+.about-content span {
+    color: #fdfdfd;
+    font-size: .8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    color: var(--hover-color);
+    font-weight: 700;
+    font-size: var(--norma-font);
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.about-content h3 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: .2rem;
+}
+
+.about-content p {
+    color: #fdfdfd;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+.info-about1,
+.info-about2,
+.info-about3 {
+    background: var(--bg-color);
+    font-size: 1.5rem;
+    position: absolute;
+    padding: 10px;
+    width: 90px;
+    height: 90px;
+    border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    display: block;
+    box-shadow: var(--neon-box-shadow);
+    border: 1px solid var(--hover-color);
+    outline: 2px solid var(--bg-color);
+    z-index: 100;
+    animation: morph 6s linear infinite;
+}
+
+.img-about p {
+    font-size: .8rem;
+}
+
+.info-about1 {
+    left: 8%;
+    top: 110%;
+}
+
+.info-about2 {
+    left: 40%;
+    top: 110%;
+}
+
+.info-about3 {
+    left: 24%;
+    top: 155%;
+}
+
+.img-about span {
+    color: var(--hover-color);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* services section css */
+.main-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--hover-color);
+}
+
+.main-text h2 {
+    font-weight: 700;
+    font-size: var(--norma-font);
+}
+
+.main-text span {
+    color: #fdfdfd;
+    font-size: .8rem;
+    font-weight: 200;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-services {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    grid-gap: 2rem;
+}
+
+.section-services .service-box {
+    flex: 1 1 18rem;
+    padding: 2rem 1rem;
+    text-align: center;
+    background-color: var(--secon-bg-color);
+    transition: transform .4s;
+    border-radius: 10px;
+}
+
+.service-btn {
+    width: auto;
+    justify-content: center;
+}
+
+.btn {
+    margin-top: 1rem;
+}
+
+.service-box:hover {
+    transform: translateY(-.5rem);
+}
+
+.service-icon {
+    border: 2px solid var(--hover-color);
+    padding: 2rem;
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    font-size: 4rem;
+    border-radius: 50px;
+    color: var(--hover-color);
+    box-shadow: var(--neon-box-shadow);
+    outline: 3px solid var(--bg-color);
+}
+
+.service-box h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.service-box p {
+    margin: .5rem 0 1.5rem 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #bdbdbd;
+    line-height: 1.6;
+}
+
+/* Skills section */
+.skills {
+    background: var(--secon-bg-color);
+    height: 100vh;
+}
+.main-text h2{
+    margin-top: 1rem;
+}
+.skill-main {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
+}
+
+.skill-bar {
+    margin-top: 2.3rem;
+}
+
+.skill-main h3 {
+    margin-bottom: 2rem;
+    font-size: var(--norma-font);
+    text-align: center;
+}
+
+.skill-left .skill-bar .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.skill-left .skill-bar .bar {
+    width: 100%;
+    height: 10px;
+    background-color: var(--bg-color);
+    border-radius: 25px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.skill-bar .bar span {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: var(--hover-color);
+    border-radius: 25px;
+    box-shadow: var(--neon-box-shadow);
+}
+
+.skill-bar .bar .html {
+    width: 73%;
+    animation: html 2s;
+}
+
+.skill-bar .bar .figma {
+    width: 90%;
+    animation: figma 3s;
+}
+
+.skill-bar .bar .javascript {
+    width: 80%;
+    animation: javascript 4s;
+}
+
+.skill-bar .bar .css {
+    width: 62%;
+    animation: css 5s;
+}
+/* skill right */
+
+.professional {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);    
+    justify-content: end;                
+    gap: 20px;                            
+    height: 100vh;
+    padding-right: 20px;                    
+  }
+  .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .box .text {
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+  }
+  
+  .box .text big {
+    font-weight: 400;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .box .text small {
+    display: block;
+    font-weight: 600;
+  }
+  
+  .circle {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    
+  }
+  
+  .circle .points {
+    width: 4px;
+    height: 20px;
+    background-color: var(--bg-color);
+    position: absolute;
+    border-radius: 3px;
+    transform: rotate(calc(var(--i) * var(--rot))) translateY(-50px);
+  }
+  
+  .points-marked {
+   
+    animation: glow 0.2s linear forwards;
+    animation-delay: calc(var(--i) * 0.05s);
+  }
+/* break points */
+@media(max-width:991px){
+    header,
+    header.sticky{
+        padding: 15px 5%;
+    }
+    footer{
+        padding: 15px 5%;
+    }
+    section{
+        padding: 50px 5%;
+    }
+}
+/* Keyframes */
+@keyframes morph {
+    0%, 100% {
+        border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    30% {
+        border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    60% {
+        border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+    80% {
+        border-radius: 69% 31% 66% 34% / 21% 30% 70% 79%;
+    }
+}
+
+@keyframes html {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 73%;
+    }
+}
+
+@keyframes figma {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes javascript {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 80%;
+    }
+}
+
+@keyframes css {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 62%;
+    }
+}
+@keyframes glow{
+    0%{
+        background: var(--bg-color);
+         box-shadow: none;
+    }
+    100%{
+     background: var(--hover-color);
+     box-shadow: var(--neon-box-shadow);
+    }
+}
