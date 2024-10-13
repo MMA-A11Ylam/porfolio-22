@@ -51,11 +51,53 @@ header {
   width: 100%;
   padding: 20px 10%;
 }
+/* General Styles for Navlist */
+.navlist {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+.navlist li {
+  position: relative;
+}
+
+.navlist a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 20px;
+  display: inline-block;
+  transition: color 0.3s ease-in-out;
+}
+
+/* Underline Effect */
+.navlist li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: var(--hover-color);
+  left: 0;
+  bottom: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.navlist li:hover::after {
+  width: 100%;
+}
+
+/* Optional: Change text color on hover */
+.navlist li:hover a {
+  color: var(--hover-color);
+}
 
 .logo {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
+  cursor: pointer;
 }
 span {
   color: var(--hover-color);
@@ -97,10 +139,18 @@ section {
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  grid-gap: 4em;
+  grid-gap: 2em;
+  grid-template-columns: 1fr; /* One column by default (mobile view) */
 }
+
+@media (min-width: 1024px) {
+  .home {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 .home-content {
   max-width: 600px;
 }
@@ -441,6 +491,7 @@ footer{
 }
 footer p{
   color: #bdbdbd;
+  font-size: 1.3rem;
 }
 footer a{
   display: inline-flex;
@@ -451,9 +502,10 @@ footer a{
   border-radius: 5px ; 
   
 }
-footer a  i {
-  font-size: 1rem;
+footer  a  i{
+  font-size: 1.5rem;
   color: var(--secon-bg-color);
+  font-weight: 200;
 }
 header {
   width: 100%;
@@ -475,46 +527,50 @@ header {
   box-shadow:var(--secon-bg-color); 
 }
 
+/* General styles */
+.services {
+  padding: 50px 0;
+  text-align: center;
+ 
+}
 
-@media(max-width:768px){
-  #menu-icon{
-    display: block;
-    transition: all .4s ease;
-  }
-  #menu-icon.bx-x{
-    transform: rotate(-180deg);
-  }
-  .navlist{
-    display: flex;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    left: 0;
-    flex-direction: column;
-    background: var(--bg-color);
-    text-align: left;
-    padding: 0 5%;
-    transition: all .45s ease;
-  }
-  .navlist a{
-display: block;
-padding-bottom: 1rem;
-font-size: 1rem;
-  }
-  .navlist.open{
- top: 100%;
-  }
-  .home{
-    grid-template-columns: 1fr;
 
+/* Jumping effect */
+.service-box:hover {
+  transform: translateY(-15px);
+}
+
+/* Splitting animation for icons */
+.service-icon {
+  font-size: 50px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.service-box:hover .service-icon {
+  animation: split 0.5s ease forwards;
+}
+
+@keyframes split {
+  0% {
+    transform: scale(1);
   }
-  .home-image{
-    margin-bottom: 5rem;
+  50% {
+    transform: scale(1.2) rotate(10deg);
   }
-  .about{
-    flex-direction: column-reverse;
-  }
-  .skill-main{
-    grid-template-columns: 1fr;
+  100% {
+    transform: scale(1) rotate(0deg);
   }
 }
+/* General portfolio styles */
+.port-box {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  margin-bottom: 20px;
+}
+
+/* Jumping effect on hover */
+.port-box:hover {
+  transform: translateY(-15px); /* Moves the box up by 15px */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for the jumping effect */
+}
+
+

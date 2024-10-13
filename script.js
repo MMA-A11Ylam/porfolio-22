@@ -42,21 +42,32 @@ setInterval(changeText, 3000);
 const circles = document.querySelectorAll('.circle');
 
 circles.forEach((elem) => {
-  const dots = parseInt(elem.getAttribute('data-dots')); 
-  const percent = parseInt(elem.getAttribute('data-percent')); 
-  const marked = Math.floor(dots * percent / 100); 
+  const dots = parseInt(elem.getAttribute('data-dots')); // Total number of dots
+  const percent = parseInt(elem.getAttribute('data-percent')); // Percentage of completion
+  const marked = Math.floor(dots * percent / 100); // Number of marked dots (filled)
 
-  const rotate = 360 / dots; 
+  const rotate = 360 / dots; // Rotation for each point
   let points = '';
 
- 
+  // Generate points with their positions
   for (let i = 0; i < dots; i++) {
-    const pointClass = i < marked ? 'points points-marked' : 'points';
-    points += `<div class="${pointClass}" style="--i:${i}; --rot:${rotate}deg"></div>`;
+    points += `<div class="points" style="--i:${i}; --rot:${rotate}deg"></div>`;
   }
 
-  elem.innerHTML = points; 
+  elem.innerHTML = points; // Insert generated points into the circle
+
+  // Sequentially add the 'marked' class to create a progressive fill effect
+  const pointsElems = elem.querySelectorAll('.points');
+  pointsElems.forEach((point, index) => {
+    if (index < marked) {
+      setTimeout(() => {
+        point.classList.add('marked');
+      }, index * 100); // Delay of 100ms per point for sequential appearance
+    }
+  });
 });
+
+
 // mixit up poetfolio se4ction
 var mixer = mixitup('.portfolio-gallery')
 // active menu//////////////////////////////////
