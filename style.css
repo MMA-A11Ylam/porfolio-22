@@ -308,9 +308,9 @@ position: relative;
   text-align: center;
 }
 .img-box img{
-  width: 100%;
-  max-width: 350px;
-  height: auto;
+  width: 150%;
+  max-width: 450px;
+  height: 400px;
 }
 /* portfoilio section */
 .fillter-buttons {
