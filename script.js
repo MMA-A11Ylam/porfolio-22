@@ -101,3 +101,33 @@ window.onscroll= ()=>{
     menuIcon.classList.remove("bx-x")
     navlist.classList.remove ("open")
 }     
+// obsertver//////////////////////////////////////////////////////////////////////////
+// Set up IntersectionObserver
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {  // Correct the property to 'isIntersecting'
+      entry.target.classList.add("show-items");
+    } else {
+      entry.target.classList.remove("show-items");
+    }
+  });
+});
+
+// Select all elements with scroll animations
+const scrollScale = document.querySelectorAll(".scroll-scale");
+const scrollBottom = document.querySelectorAll(".scroll-bottom");
+const scrollTop = document.querySelectorAll(".scroll-top");
+
+// Observe elements
+scrollScale.forEach((el) => observer.observe(el));
+scrollBottom.forEach((el) => observer.observe(el));
+scrollTop.forEach((el) => observer.observe(el));
+if (entry.isIntersecting) {
+  console.log("Element is in view:", entry.target);
+  entry.target.classList.add("show-items");
+} else {
+  console.log("Element is out of view:", entry.target);
+  entry.target.classList.remove("show-items");
+}
+
+

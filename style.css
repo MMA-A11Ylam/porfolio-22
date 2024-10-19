@@ -70,6 +70,7 @@ header {
   padding: 10px 20px;
   display: inline-block;
   transition: color 0.3s ease-in-out;
+
 }
 
 /* Underline Effect */
@@ -106,9 +107,13 @@ span {
   display: flex;
 }
 .navlist a {
+  display: inline-flex;
   color: var(--text--color);
   font-weight: 500;
   padding: 10px 20px;
+  animation: slideAnimation 1s ease forwards;
+  animation-delay: calc(.3s * var(--i));
+  opacity: 0;
 }
 .navlist a:hover {
   color: var(--hover-color);
@@ -143,7 +148,7 @@ section {
   grid-template-columns: 1fr; /* One column by default (mobile view) */
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 950px) {
   .home {
     grid-template-columns: repeat(2, 1fr); /* Two columns on larger screens */
     justify-content: center;
@@ -301,16 +306,14 @@ color: var(--bg-color);
 .btn:nth-child(2)::before{
   background: var(--hover-color);
 }
-.home-image{
 
-}
 .img-box{
   text-align: center;
 }
 .img-box img{
   width: 150%;
   max-width: 450px;
-  height: 400px;
+  height: auto;
 }
 /* portfoilio section */
 .fillter-buttons {
@@ -549,7 +552,16 @@ header {
 .service-box:hover .service-icon {
   animation: split 0.5s ease forwards;
 }
-
+@keyframes slideAnimation{
+  0%{
+    opacity: 0;
+    transform:translateY(100px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 @keyframes split {
   0% {
     transform: scale(1);
